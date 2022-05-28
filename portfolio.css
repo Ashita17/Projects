@@ -1,0 +1,544 @@
+body {
+  background-color: white;
+  background-size: cover;
+}
+
+header {
+  display: flex;
+  min-height: 2rem;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  font-family: "Josefin Sans", sans-serif;
+  color: white;
+  font-size: 2rem;
+  text-align: center;
+  width: 100vw;
+}
+.header1 {
+  flex: 1;
+  background-color: #333333;
+}
+.header2 {
+  padding-left: 0.313rem;
+  flex: 1;
+  background-color: #020202;
+}
+.header3 {
+  flex: 6;
+  background-color: #333333;
+}
+.header2 a {
+  text-decoration: none;
+  color: white;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+.main {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 1.5rem;
+  min-height: 45rem;
+  /* flex-wrap: wrap; */
+  /* width: 100vw; */
+}
+.main_left_flipbox {
+  flex: 1;
+  min-width: 375px;
+}
+.main_right {
+  flex: 1;
+  align-items: right;
+  text-decoration: none;
+  background-color: black;
+  text-align: right;
+}
+.main_right a:hover {
+  text-decoration: underline;
+  text-underline-offset: 1rem;
+}
+.prop1 {
+  color: white;
+  font-weight: 800;
+  font-family: "Josefin Sans", sans-serif;
+  padding-right: 1rem;
+  text-decoration: none;
+  align-self: right;
+}
+.main_left_flipbox {
+  background-color: white;
+  perspective: 62.5rem; /* Remove this if you don't want the 3D effect */
+}
+
+/* This container is needed to position the front and back side */
+.flip-box-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.main_left_flipbox:hover .flip-box-inner {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-box-front,
+.flip-box-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-box-front {
+  background-color: #bbb;
+  color: black;
+}
+
+/* Style the back side */
+.flip-box-back {
+  background-color: black;
+  color: white;
+  transform: rotateY(180deg);
+}
+
+h1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: 0;
+  padding: 0;
+  transform: translate(-50%, -30%);
+  color: white;
+  font-family: "Josefin Sans", sans-serif;
+  letter-spacing: 0.5rem;
+  font-size: 14rem;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-width: 0.1rem;
+  z-index: 2;
+  text-align: center;
+}
+
+@media only screen and (max-width: 768px) {
+  h1 {
+    font-size: 6rem;
+  }
+}
+
+.main_left_flipbox,
+.main_right,
+.flip-box-inner,
+.flip-box-front,
+.flip-box-back {
+  display: flex;
+}
+.top_left {
+  position: absolute;
+  top: 3.125rem;
+  left: 1rem;
+  z-index: 2;
+  font-size: xx-large;
+}
+.header1 a {
+  text-decoration: none;
+  color: #76cc6c;
+}
+.ABOUT_ME {
+  display: flex;
+  max-width: inherit;
+  height: 45rem;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  flex-direction: row;
+}
+.ABOUT_RIGHT {
+  z-index: 1; /* Stay on top */
+  background-color: white; /* Black */
+  width: 50%;
+  /* overflow: visible; Disable horizontal scroll */
+  display: flex;
+  min-width: 350px;
+  flex-flow: row nowrap;
+  background: url("images/ASHITA3.png");
+  background-size: cover;
+  margin: 3rem 4rem;
+}
+@media only screen and (max-width: 1280px) {
+}
+
+/* .ABOUT_RIGHT img {
+  position: inherit;
+} */
+
+/* Style page content */
+.ABOUT_LEFT {
+  width: 50%;
+  overflow: scroll;
+  flex-direction: column;
+  min-width: 190px;
+}
+.prop4 {
+  font-size: x-large;
+}
+.prop2 {
+  font-size: 2rem;
+  font-family: "Josefin Sans", sans-serif;
+  border-bottom-style: solid;
+  color: black;
+  font-weight: 200;
+  padding-bottom: 0.75rem;
+  padding-left: 15rem;
+  padding-right: 10rem;
+  margin-top: 6rem;
+}
+.ABOUT_LEFT p1 {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: x-large;
+  text-align: left;
+}
+.ABOUT_LEFT p2 {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: x-large;
+  text-align: left;
+}
+.ABOUT_LEFT p3 {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: x-large;
+  text-align: left;
+}
+
+.SKILLS {
+  background-color: white;
+  height: 20rem;
+  width: 100vw;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: 3rem 1fr;
+  row-gap: 0.05rem;
+  column-gap: 0.05rem;
+  border: #76cc6c;
+}
+
+.item1 {
+  background-color: white;
+  grid-column-start: 1;
+  grid-column-end: 6;
+  color: black;
+  text-align: center;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: xx-large;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.item2 {
+  text-align: center;
+  background-color: white;
+  grid-column-start: 1;
+  grid-column-end: 2;
+}
+.item3 {
+  text-align: center;
+  background-color: #76cc6c;
+  grid-column-start: 2;
+  grid-column-end: 3;
+}
+.item4 {
+  text-align: center;
+  background-color: white;
+  grid-column-start: 3;
+  grid-column-end: 4;
+}
+.item5 {
+  text-align: center;
+  background-color: #76cc6c;
+  grid-column-start: 4;
+  grid-column-end: 5;
+}
+.item6 {
+  text-align: center;
+  background-color: white;
+  grid-column-start: 5;
+  grid-column-end: 6;
+}
+
+@media only screen and (max-width: 1280px) {
+  .SKILLS {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr 4fr 4fr;
+  }
+  .item1 {
+    grid-column-start: 1;
+    grid-column-end: 4;
+  }
+  .item5 {
+    grid-column-start: 1;
+    grid-column-end: 2;
+  }
+  .item6 {
+    grid-column-start: 2;
+    grid-column-end: 3;
+  }
+}
+
+.prop6 {
+  margin: 2rem 2rem;
+}
+.prop7 {
+  margin: 2rem 2rem;
+}
+.prop8 {
+  margin: 2rem 2rem;
+}
+.prop9 {
+  font-size: 3.75rem;
+  font-family: "Dancing Script", cursive;
+  text-align: center;
+  padding-bottom: 2rem;
+  padding-top: 2rem;
+  margin-left: 4rem;
+  margin-top: 3rem;
+}
+.prop10 {
+  padding-left: 1.5rem;
+}
+.prop11 {
+  padding-left: 1.5rem;
+  padding-top: 0.8rem;
+  padding-bottom: 1.5rem;
+}
+.prop12 {
+  padding-top: 0.75rem;
+  padding-bottom: 0.9rem;
+}
+.prop13 {
+  padding-top: 1.2rem;
+  padding-bottom: 1.1rem;
+}
+.prop14 {
+  padding-top: 0.9rem;
+  padding-bottom: 0.5rem;
+}
+.prop15 {
+  font-family: "Dancing Script", cursive;
+  font-weight: bolder;
+  font-size: 2rem;
+}
+.prop16 {
+  padding-top: 2rem;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: large;
+  color: black;
+  font-weight: bold;
+}
+.prop17 {
+  padding-top: 2.2rem;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: large;
+  color: black;
+  font-weight: bold;
+}
+.prop18 {
+  padding-top: 1.8rem;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: large;
+  color: black;
+  font-weight: bold;
+}
+.prop19 {
+  /*not working*/
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: bolder;
+  color: black;
+}
+.get_in_touch {
+  width: 100vw;
+  height: 5rem;
+  background-color: #333333;
+  color: #76cc6c;
+  font-family: "Josefin Sans", sans-serif;
+  margin-top: 8rem;
+  font-size: 3rem;
+  text-align: center;
+  padding-top: 1.6rem;
+}
+.CONTACT {
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  min-height: 45rem;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  color: black;
+  text-align: center;
+}
+.CONTACT_LEFT {
+  margin-top: 1rem;
+  flex: 1;
+}
+.CONTACT_RIGHT {
+  margin-top: 1rem;
+  flex: 1;
+}
+.prop20 {
+  color: black;
+  font-size: 3rem;
+  text-align: center;
+  font-family: "Dancing Script", cursive;
+  margin-bottom: 2rem;
+}
+.maps {
+  margin-top: 2rem;
+  border: #76cc6c;
+  border-style: solid;
+  border-width: 0.2;
+}
+.prop21 {
+  color: black;
+  text-align: center;
+  font-size: x-large;
+  font-family: "Josefin Sans", sans-serif;
+  margin-top: 1rem;
+  font-weight: bold;
+}
+.prop22 {
+  color: white;
+  font-size: x-large;
+  font-family: "Josefin Sans", sans-serif;
+  padding-top: 1.5rem;
+  text-align: center;
+}
+.footer {
+  width: 100vw;
+  min-height: 15rem;
+  background-color: black;
+  display: grid;
+  align-items: center;
+  grid-template-columns: repeat (6, 1fr);
+  grid-template-rows: 5rem 1fr;
+  column-gap: 1rem;
+  row-gap: 1rem;
+}
+.f1 {
+  background-color: black;
+  grid-column-start: 1;
+  grid-column-end: 7;
+  color: white;
+  text-align: center;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: x-large;
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+  column-gap: 3rem;
+  row-gap: 1rem;
+}
+.f2 {
+  background-color: black;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  padding-left: 8rem;
+}
+.f3 {
+  background-color: black;
+  grid-column-start: 2;
+  grid-column-end: 3;
+}
+.f4 {
+  background-color: black;
+  grid-column-start: 3;
+  grid-column-end: 4;
+}
+.f5 {
+  background-color: black;
+  grid-column-start: 4;
+  grid-column-end: 5;
+}
+.f6 {
+  background-color: black;
+  grid-column-start: 5;
+  grid-column-end: 6;
+}
+.f7 {
+  background-color: black;
+  grid-column-start: 6;
+  grid-column-end: 7;
+}
+input[type="text"] {
+  font-size: medium;
+  width: 40%;
+  box-sizing: border-box;
+  padding: 0.4rem 0.4rem;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  border: 0.1rem solid #76cc6c;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+input[type="text"]:focus {
+  background-color: rgb(246, 248, 250);
+}
+textarea {
+  padding: 0.5rem 0.5rem;
+  box-sizing: border-box;
+  border: 0.1rem solid #76cc6c;
+  border-radius: 0.5rem;
+  resize: none;
+  font-size: medium;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.container {
+  font-size: medium;
+  font-family: "Josefin Sans", sans-serif;
+}
+input[type="submit"],
+input[type="reset"] {
+  background-color: white;
+  padding: 0.4rem 0.4rem;
+  border: 0.1rem solid #76cc6c;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  margin-bottom: 1rem;
+}
+img {
+  object-fit: contain;
+}
+@media only screen and (max-width: 1280px) {
+  .footer {
+    grid-template-columns: repeat (3, 1fr);
+    grid-template-rows: 1fr 3fr 3fr;
+    column-gap: 1rem;
+    row-gap: 1rem;
+  }
+  .f1 {
+    grid-column-start: 1;
+    grid-column-end: 4;
+  }
+  .f5 {
+    background-color: black;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    padding-left: 7.6rem;
+  }
+  .f6 {
+    background-color: black;
+    grid-column-start: 2;
+    grid-column-end: 3;
+  }
+  .f7 {
+    background-color: black;
+    grid-column-start: 3;
+    grid-column-end: 4;
+  }
+}
