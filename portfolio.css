@@ -51,8 +51,9 @@ header {
   min-width: 375px;
 }
 .main_right {
-  flex: 1;
-  align-items: right;
+  display: flex;
+  position: absolute;
+  left: 50%;
   text-decoration: none;
   background-color: black;
   text-align: right;
@@ -155,7 +156,6 @@ h1 {
 }
 .ABOUT_ME {
   display: flex;
-  max-width: inherit;
   height: 45rem;
   padding-top: 5rem;
   padding-bottom: 5rem;
@@ -219,14 +219,17 @@ h1 {
 
 .SKILLS {
   background-color: white;
-  height: 20rem;
-  width: 100vw;
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: 3rem 1fr;
-  row-gap: 0.05rem;
-  column-gap: 0.05rem;
+  display: flex;
+  flex-direction: column;
   border: #76cc6c;
+}
+
+.row_1 {
+  display: flex;
+}
+
+.row_2 {
+  display: flex;
 }
 
 .item1 {
@@ -244,32 +247,42 @@ h1 {
 .item2 {
   text-align: center;
   background-color: white;
-  grid-column-start: 1;
-  grid-column-end: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 33%;
 }
 .item3 {
   text-align: center;
   background-color: #76cc6c;
-  grid-column-start: 2;
-  grid-column-end: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 33%;
 }
 .item4 {
   text-align: center;
   background-color: white;
-  grid-column-start: 3;
-  grid-column-end: 4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 33%;
 }
 .item5 {
   text-align: center;
   background-color: #76cc6c;
-  grid-column-start: 4;
-  grid-column-end: 5;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  min-width: 50%;
 }
 .item6 {
   text-align: center;
   background-color: white;
-  grid-column-start: 5;
-  grid-column-end: 6;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  min-width: 50%;
 }
 
 @media only screen and (max-width: 1280px) {
@@ -309,11 +322,8 @@ h1 {
   margin-left: 4rem;
   margin-top: 3rem;
 }
-.prop10 {
-  padding-left: 1.5rem;
-}
+
 .prop11 {
-  padding-left: 1.5rem;
   padding-top: 0.8rem;
   padding-bottom: 1.5rem;
 }
@@ -333,6 +343,7 @@ h1 {
   font-family: "Dancing Script", cursive;
   font-weight: bolder;
   font-size: 2rem;
+  display: flex;
 }
 .prop16 {
   padding-top: 2rem;
@@ -362,15 +373,14 @@ h1 {
   color: black;
 }
 .get_in_touch {
-  width: 100vw;
-  height: 5rem;
   background-color: #333333;
   color: #76cc6c;
   font-family: "Josefin Sans", sans-serif;
   margin-top: 8rem;
   font-size: 3rem;
-  text-align: center;
-  padding-top: 1.6rem;
+  padding: 1.6rem;
+  display: flex;
+  justify-content: center;
 }
 .CONTACT {
   background-color: white;
@@ -419,60 +429,56 @@ h1 {
   padding-top: 1.5rem;
   text-align: center;
 }
+.footer-wrapper {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
 .footer {
-  width: 100vw;
-  min-height: 15rem;
   background-color: black;
-  display: grid;
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  grid-template-columns: repeat (6, 1fr);
-  grid-template-rows: 5rem 1fr;
-  column-gap: 1rem;
-  row-gap: 1rem;
+  justify-content: center;
+  column-gap: 3rem;
+  row-gap: 3rem;
+}
+.footer_wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 3rem;
+}
+.footer_row {
+  display: flex;
+  flex-direction: row;
+  gap: 3rem;
 }
 .f1 {
   background-color: black;
-  grid-column-start: 1;
-  grid-column-end: 7;
   color: white;
   text-align: center;
   font-family: "Josefin Sans", sans-serif;
   font-size: x-large;
   padding-top: 2rem;
   padding-bottom: 1rem;
-  column-gap: 3rem;
-  row-gap: 1rem;
 }
 .f2 {
   background-color: black;
-  grid-column-start: 1;
-  grid-column-end: 2;
-  padding-left: 8rem;
 }
 .f3 {
   background-color: black;
-  grid-column-start: 2;
-  grid-column-end: 3;
 }
 .f4 {
   background-color: black;
-  grid-column-start: 3;
-  grid-column-end: 4;
 }
 .f5 {
   background-color: black;
-  grid-column-start: 4;
-  grid-column-end: 5;
 }
 .f6 {
   background-color: black;
-  grid-column-start: 5;
-  grid-column-end: 6;
 }
 .f7 {
   background-color: black;
-  grid-column-start: 6;
-  grid-column-end: 7;
 }
 input[type="text"] {
   font-size: medium;
@@ -514,31 +520,17 @@ input[type="reset"] {
 img {
   object-fit: contain;
 }
-@media only screen and (max-width: 1280px) {
-  .footer {
-    grid-template-columns: repeat (3, 1fr);
-    grid-template-rows: 1fr 3fr 3fr;
-    column-gap: 1rem;
-    row-gap: 1rem;
+@media only screen and (max-width: 720px) {
+  .footer_wrapper {
+    flex-direction: column;
   }
-  .f1 {
-    grid-column-start: 1;
-    grid-column-end: 4;
+}
+
+@media only screen and (max-width: 720px) {
+  .row_1 {
+    flex-direction: column;
   }
-  .f5 {
-    background-color: black;
-    grid-column-start: 1;
-    grid-column-end: 2;
-    padding-left: 7.6rem;
-  }
-  .f6 {
-    background-color: black;
-    grid-column-start: 2;
-    grid-column-end: 3;
-  }
-  .f7 {
-    background-color: black;
-    grid-column-start: 3;
-    grid-column-end: 4;
+  .row_2 {
+    flex-direction: column;
   }
 }
